@@ -1,6 +1,6 @@
 <template>
-  <div class="home">
-    Hello Куруло !!!
+  <div class="home-page">
+    Hello!! Home Page is here!!
   </div>
 </template>
 

@@ -2,8 +2,16 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 // pages
-import Home from '../views/Home.vue'
-import Habits from '../views/Habits.vue'
+import HomePage from '../views/HomePage.vue'
+import HabitsPage from '../views/HabitsPage.vue'
+import ContactsPage from '../views/ContactsPage.vue'
+import FinancesPage from '../views/FinancesPage.vue'
+import PlansPage from '../views/PlansPage.vue'
+import InformationPage from '../views/InformationPage.vue'
+import SkillsPage from '../views/SkillsPage.vue'
+import SpheresPage from '../views/SpheresPage.vue'
+import StatisticsPage from '../views/StatisticsPage.vue'
+import TasksPage from '../views/TasksPage.vue'
 
 // svg
 import MainPageIcon from '../assets/svg/main-page-icon.svg'
@@ -13,7 +21,7 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    component: Home,
+    component: HomePage,
     name: '/',
     meta: {
       title: 'Главная',
@@ -23,7 +31,7 @@ const routes = [
   },
   {
     path: '/habits',
-    component: Habits,
+    component: HabitsPage,
     name: '/',
     meta: {
       title: 'Привычки',
@@ -33,7 +41,7 @@ const routes = [
   },
   {
     path: '/spheres',
-    component: Habits,
+    component: SpheresPage,
     name: '/',
     meta: {
       title: 'Сферы',
@@ -43,7 +51,7 @@ const routes = [
   },
   {
     path: '/tasks',
-    component: Habits,
+    component: TasksPage,
     name: '/',
     meta: {
       title: 'Задачи',
@@ -52,8 +60,8 @@ const routes = [
     }
   },
   {
-    path: '/plan',
-    component: Habits,
+    path: '/plans',
+    component: PlansPage,
     name: '/',
     meta: {
       title: 'Планирование',
@@ -62,8 +70,8 @@ const routes = [
     }
   },
   {
-    path: '/statistic',
-    component: Habits,
+    path: '/statistics',
+    component: StatisticsPage,
     name: '/',
     meta: {
       title: 'Статистика',
@@ -73,7 +81,7 @@ const routes = [
   },
   {
     path: '/contacts',
-    component: Habits,
+    component: ContactsPage,
     name: '/',
     meta: {
       title: 'Контакты',
@@ -82,8 +90,8 @@ const routes = [
     }
   },
   {
-    path: '/money',
-    component: Habits,
+    path: '/finances',
+    component: FinancesPage,
     name: '/',
     meta: {
       title: 'Финансы',
@@ -92,8 +100,8 @@ const routes = [
     }
   },
   {
-    path: '/skills',
-    component: Habits,
+    path: '/information',
+    component: InformationPage,
     name: '/',
     meta: {
       title: 'Информация',
@@ -102,8 +110,8 @@ const routes = [
     }
   },
   {
-    path: '/spheres',
-    component: Habits,
+    path: '/skills',
+    component: SkillsPage,
     name: '/',
     meta: {
       title: 'Навыки',

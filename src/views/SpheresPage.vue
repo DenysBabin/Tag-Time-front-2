@@ -1,12 +1,12 @@
 <template>
-  <div>
-    Hello
+  <div class="spheres-page">
+    Hello!! Spheres Page is here!!
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Habits'
+  name: "Spheres"
 }
 </script>
 
