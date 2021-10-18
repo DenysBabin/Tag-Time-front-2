@@ -33,4 +33,8 @@ body {
   display: flex;
   flex-direction: row;
 }
+
+.pages {
+  width: 100%;
+}
 </style>

@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: "Spheres"
+  name: 'Spheres'
 }
 </script>
 

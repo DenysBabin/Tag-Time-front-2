@@ -12,6 +12,7 @@ import SkillsPage from '../views/SkillsPage.vue'
 import SpheresPage from '../views/SpheresPage.vue'
 import StatisticsPage from '../views/StatisticsPage.vue'
 import TasksPage from '../views/TasksPage.vue'
+import MiniProjectsPage from '../views/MiniProjectsPage.vue'
 
 // svg
 import MainPageIcon from '../assets/svg/main-page-icon.svg'
@@ -115,6 +116,16 @@ const routes = [
     name: '/',
     meta: {
       title: 'Навыки',
+      roles: ['admin', 'manager'],
+      icon: MainPageIcon
+    }
+  },
+  {
+    path: '/mini-projects',
+    component: MiniProjectsPage,
+    name: '/mini-projects',
+    meta: {
+      title: 'Мини Проекты',
       roles: ['admin', 'manager'],
       icon: MainPageIcon
     }
