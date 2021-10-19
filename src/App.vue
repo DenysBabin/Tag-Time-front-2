@@ -1,6 +1,6 @@
 <template>
   <div id="app" class="app">
-    <div class="navigation">
+    <div class="navigation"  v-if="$route.path !== '/timers'">
       <Header></Header>
     </div>
 

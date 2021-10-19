@@ -13,6 +13,7 @@ import SpheresPage from '../views/SpheresPage.vue'
 import StatisticsPage from '../views/StatisticsPage.vue'
 import TasksPage from '../views/TasksPage.vue'
 import MiniProjectsPage from '../views/MiniProjectsPage.vue'
+import Timer from '../components/examples/Timer.vue'
 
 // svg
 import MainPageIcon from '../assets/svg/main-page-icon.svg'
@@ -126,6 +127,16 @@ const routes = [
     name: '/mini-projects',
     meta: {
       title: 'Мини Проекты',
+      roles: ['admin', 'manager'],
+      icon: MainPageIcon
+    }
+  },
+  {
+    path: '/timers',
+    component: Timer,
+    name: '/timers',
+    meta: {
+      title: 'Таймеры',
       roles: ['admin', 'manager'],
       icon: MainPageIcon
     }

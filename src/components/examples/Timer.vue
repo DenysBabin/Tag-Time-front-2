@@ -46,9 +46,6 @@ export default {
 
 .timer-1 {
   font-size: 96px;
-  width: 100%;
-  display: block;
-  margin: auto;
-
+  width: 554px;
 }
 </style>
