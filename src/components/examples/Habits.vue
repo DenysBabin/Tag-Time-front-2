@@ -125,4 +125,13 @@ export default {
   margin: auto;
   padding: 4px;
 }
+
+.nav {
+  display: flex;
+  flex-direction: row;
+}
+
+.item {
+  padding: 8px 16px;
+}
 </style>
