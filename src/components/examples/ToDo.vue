@@ -41,6 +41,10 @@ export default {
   },
   mounted () {
     this.todolistLocalSt = JSON.parse(localStorage.getItem('todolist'))
+
+    if (!this.todolistLocalSt) {
+      this.todolistLocalSt = []
+    }
   },
   methods: {
     addTask () {
