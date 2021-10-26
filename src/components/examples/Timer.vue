@@ -11,6 +11,7 @@
         <el-link type="primary" @click="drawer = true">Настройка таймеров</el-link>
       </div>
     </div>
+
     <div class="timer-show">
       <div class="timer-1" v-if="timerName === 'Age'">
         {{ timerAge }}
@@ -25,6 +26,17 @@
       :visible.sync="drawer"
       :direction="direction"
       :before-close="handleClose">
+      <div class="drawer">
+        <el-date-picker
+          class="drawer-item"
+          v-model="birthDay"
+          type="date"
+          placeholder="Выберите дату Рождения">
+        </el-date-picker>
+
+        <el-button class="drawer-item" type="primary" @click="changeStartDate()">Сохранить</el-button>
+        <el-button class="drawer-item" type="primary" @click="changeStartDateToDenys()">День рождения Дениса</el-button>
+      </div>
 
     </el-drawer>
   </div>
@@ -42,7 +54,9 @@ export default {
       timerGoal: '',
       startDate: '',
       endDate: '',
-      timerName: 'Age'
+      timerName: 'Age',
+      birthDay: '',
+      birthdayDenys: '2000-12-15T22:20:00'
     }
   },
   mounted () {
@@ -51,7 +65,14 @@ export default {
   },
   methods: {
     setTimerAge () {
-      this.startDate = new Date('2000-12-15T22:20:00')
+      const localBirthDay = JSON.parse(localStorage.getItem('birthdayTimer'))
+
+      if (localBirthDay) {
+        this.startDate = new Date(localBirthDay)
+      } else {
+        this.startDate = new Date(this.birthdayDenys)
+      }
+
       setInterval(() => {
         this.timerAge = this.getNumber(new Date() - this.startDate, 'y')
       }, 50)
@@ -77,11 +98,20 @@ export default {
       this.timerName = 'Goal'
     },
     handleClose (done) {
-      this.$confirm('Are you sure you want to close this?')
-        .then(_ => {
-          done()
-        })
-        .catch(_ => {})
+      done()
+      // this.$confirm('Are you sure you want to close this?')
+      //   .then(_ => {
+      //     done()
+      //   })
+      //   .catch(_ => {})
+    },
+    changeStartDate () {
+      this.startDate = this.birthDay
+      localStorage.setItem('birthdayTimer', JSON.stringify(this.startDate))
+    },
+    changeStartDateToDenys () {
+      this.startDate = new Date(this.birthdayDenys)
+      localStorage.setItem('birthdayTimer', JSON.stringify(this.startDate))
     }
   },
   computed: {
@@ -89,7 +119,11 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+::v-deep .el-button+.el-button {
+  margin-left: 0;
+}
+
 .timers-page {
   height: 100vh;
   display: flex;
@@ -117,5 +151,15 @@ export default {
 
 .timer-item {
   padding: 8px 12px;
+}
+
+.drawer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.drawer-item {
+  margin: 4px auto !important;
 }
 </style>
