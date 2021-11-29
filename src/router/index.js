@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 // pages
 import HomePage from '../views/HomePage.vue'
 import SportPage from '../views/Sport/SportAddDataPage.vue'
+import SportShowPage from '../views/Sport/SportShowPage.vue'
 import HabitsPage from '../views/HabitsPage.vue'
 import ContactsPage from '../views/ContactsPage.vue'
 import FinancesPage from '../views/FinancesPage.vue'
@@ -38,6 +39,16 @@ const routes = [
     name: '/sport',
     meta: {
       title: 'Спорт',
+      roles: ['admin', 'manager'],
+      icon: MainPageIcon
+    }
+  },
+  {
+    path: '/sport-show',
+    component: SportShowPage,
+    name: '/sport-show',
+    meta: {
+      title: 'Показ спорта',
       roles: ['admin', 'manager'],
       icon: MainPageIcon
     }
