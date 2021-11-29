@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 
 // pages
 import HomePage from '../views/HomePage.vue'
+import SportPage from '../views/Sport/SportAddDataPage.vue'
 import HabitsPage from '../views/HabitsPage.vue'
 import ContactsPage from '../views/ContactsPage.vue'
 import FinancesPage from '../views/FinancesPage.vue'
@@ -27,6 +28,16 @@ const routes = [
     name: '/',
     meta: {
       title: 'Главная',
+      roles: ['admin', 'manager'],
+      icon: MainPageIcon
+    }
+  },
+  {
+    path: '/sport',
+    component: SportPage,
+    name: '/sport',
+    meta: {
+      title: 'Спорт',
       roles: ['admin', 'manager'],
       icon: MainPageIcon
     }
