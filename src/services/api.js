@@ -1,6 +1,6 @@
 import axios from 'axios'
 export default () => {
   return axios.create({
-    baseURL: 'http://denbabinis.com:6000'
+    baseURL: 'http://localhost:6000'
   })
 }
