@@ -1,14 +1,15 @@
 <template>
-  <div class="home-page">
-    Hello!! Home Page is here!!
+  <div>
+    <line-chart/>
   </div>
 </template>
 
 <script>
+import LineChart from '../components/charts/Chart.vue'
 
 export default {
-  name: 'Home',
   components: {
+    LineChart
   }
 }
 </script>

@@ -11,16 +11,16 @@
       <el-input placeholder="Подтягивания" v-model="sport.pullUps"></el-input>
     </div>
     <div class="block">
-      <el-input placeholder="Отжимания" v-model="sport.pushUps"></el-input>
-    </div>
-    <div class="block">
       <el-input placeholder="Приседания" v-model="sport.squats"></el-input>
     </div>
     <div class="block">
-      <el-input placeholder="Бег" v-model="sport.run"></el-input>
+      <el-input placeholder="Брусья" v-model="sport.bars"></el-input>
     </div>
     <div class="block">
-      <el-input placeholder="Пресс" v-model="sport.press"></el-input>
+      <el-input placeholder="Отжимания" v-model="sport.pushUps"></el-input>
+    </div>
+    <div class="block">
+      <el-input placeholder="Бег" v-model="sport.run"></el-input>
     </div>
 
     <el-button class="block" type="success" @click="addSport">Добавить</el-button>
@@ -39,8 +39,7 @@ export default {
         pushUps: '',
         squats: '',
         bars: '',
-        run: '',
-        press: ''
+        run: ''
       }
     }
   },
@@ -48,12 +47,11 @@ export default {
     async addSport () {
       await SportService.addNewPost({
         date: this.sport.date,
-        pullUps: this.sport.pullUps,
-        pushUps: this.sport.pushUps,
-        squats: this.sport.squats,
-        bars: this.sport.bars,
-        run: this.sport.run,
-        press: this.sport.press
+        pullUps: this.sport.pullUps ? this.sport.pullUps : 0,
+        pushUps: this.sport.pushUps ? this.sport.pushUps : 0,
+        squats: this.sport.squats ? this.sport.squats : 0,
+        bars: this.sport.bars ? this.sport.bars : 0,
+        run: this.sport.run ? this.sport.run : 0
       })
 
       this.resetData()
@@ -69,7 +67,6 @@ export default {
       this.sport.squats = ''
       this.sport.bars = ''
       this.sport.run = ''
-      this.sport.press = ''
     }
   }
 }
