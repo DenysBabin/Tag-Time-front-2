@@ -3,8 +3,10 @@ import VueRouter from 'vue-router'
 
 // pages
 import HomePage from '../views/HomePage.vue'
-import SportPage from '../views/Sport/SportAddDataPage.vue'
-import SportShowPage from '../views/Sport/SportShowPage.vue'
+// import SportAddPage from '../views/Sport/SportAddDataPage.vue'
+// import SportShowPage from '../views/Sport/SportShowPage.vue'
+import SportPage from '../views/SportPage.vue'
+import TodoApp from '../views/TodoPage.vue'
 import HabitsPage from '../views/HabitsPage.vue'
 import ContactsPage from '../views/ContactsPage.vue'
 import FinancesPage from '../views/FinancesPage.vue'
@@ -36,7 +38,7 @@ const routes = [
   {
     path: '/sport',
     component: SportPage,
-    name: '/sport',
+    name: 'Sport',
     meta: {
       title: 'Спорт',
       roles: ['admin', 'manager'],
@@ -44,15 +46,25 @@ const routes = [
     }
   },
   {
-    path: '/sport-show',
-    component: SportShowPage,
-    name: '/sport-show',
+    path: '/todoApp',
+    component: TodoApp,
+    name: 'TodoApp',
     meta: {
-      title: 'Показ спорта',
+      title: 'ToDoApp',
       roles: ['admin', 'manager'],
       icon: MainPageIcon
     }
   },
+  // {
+  //   path: '/sport-show',
+  //   component: SportShowPage,
+  //   name: 'Sport-Show',
+  //   meta: {
+  //     title: 'Показ спорта',
+  //     roles: ['admin', 'manager'],
+  //     icon: MainPageIcon
+  //   }
+  // },
   {
     path: '/habits',
     component: HabitsPage,

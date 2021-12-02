@@ -125,7 +125,7 @@
 
 <script>
 import SportService from '@/services/SportService'
-import LineChart from '../../components/charts/Chart.vue'
+import LineChart from '../components/charts/Chart.vue'
 
 export default {
   name: 'SportShowPage',

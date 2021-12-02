@@ -1,6 +1,7 @@
 <template>
   <div class="nav">
     <el-menu
+      v-if="false"
       class="menu"
       router
       :defaultActive="$route.path"
