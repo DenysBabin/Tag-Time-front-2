@@ -18,6 +18,7 @@ import StatisticsPage from '../views/StatisticsPage.vue'
 import TasksPage from '../views/TasksPage.vue'
 import MiniProjectsPage from '../views/MiniProjectsPage.vue'
 import Timer from '../components/examples/Timer.vue'
+import Hohti from '../views/Nohti/NohtiPage.vue'
 
 // svg
 import MainPageIcon from '../assets/svg/main-page-icon.svg'
@@ -31,6 +32,16 @@ const routes = [
     name: '/',
     meta: {
       title: 'Главная',
+      roles: ['admin', 'manager'],
+      icon: MainPageIcon
+    }
+  },
+  {
+    path: '/nohti',
+    component: Hohti,
+    name: 'Nohti',
+    meta: {
+      title: 'Ногти',
       roles: ['admin', 'manager'],
       icon: MainPageIcon
     }

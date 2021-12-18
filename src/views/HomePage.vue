@@ -13,6 +13,11 @@
         <span>ToDo</span>
         <span>App</span>
       </div>
+
+      <div class="card my-sport" @click="goToToDoApp()">
+        <span>ToDo</span>
+        <span>App</span>
+      </div>
     </div>
 
   </div>

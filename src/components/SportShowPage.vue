@@ -44,6 +44,12 @@
         <div>
           Осталось сделать: {{ 4500 - done.pullUpsSum }}
         </div>
+        <div>
+          Надо сделать сегодня: {{ datacollectionPullUps ? (datacollectionPullUps.datasets[1].data[datacollectionPullUps.datasets[1].data.length - 1] * 1.02).toFixed(2) : null}}
+        </div>
+        <div>
+          Надо делать каждый день, если поделить все на дни: {{ (( 4500 - done.pullUpsSum ) / getDays()).toFixed(2)  }}
+        </div>
       </div>
 
       <line-chart
@@ -60,6 +66,12 @@
         </div>
         <div>
           Осталось сделать: {{ 5000 - done.squatsSum }}
+        </div>
+        <div>
+          Надо сделать сегодня: {{ datacollectionSquats ? (datacollectionSquats.datasets[1].data[datacollectionSquats.datasets[1].data.length - 1] * 1.02).toFixed(2) : null}}
+        </div>
+        <div>
+          Надо делать каждый день, если поделить все на дни: {{ (( 5000 - done.squatsSum ) / getDays()).toFixed(2)  }}
         </div>
       </div>
 
@@ -78,6 +90,12 @@
         <div>
           Осталось сделать: {{ 5500 - done.barsSum }}
         </div>
+        <div>
+          Надо сделать сегодня: {{ datacollectionBars ? (datacollectionBars.datasets[1].data[datacollectionBars.datasets[1].data.length - 1] * 1.02).toFixed(2) : null}}
+        </div>
+        <div>
+          Надо делать каждый день, если поделить все на дни: {{ (( 5500 - done.barsSum ) / getDays()).toFixed(2)  }}
+        </div>
       </div>
 
       <line-chart
@@ -95,6 +113,12 @@
         <div>
           Осталось сделать: {{ 6000 - done.pushUpsSum }}
         </div>
+        <div>
+          Надо сделать сегодня: {{ datacollectionPushUps ? (datacollectionPushUps.datasets[1].data[datacollectionPushUps.datasets[1].data.length - 1] * 1.02).toFixed(2) : null}}
+        </div>
+        <div>
+          Надо делать каждый день, если поделить все на дни: {{ (( 6000 - done.pushUpsSum ) / getDays()).toFixed(2)  }}
+        </div>
       </div>
 
       <line-chart
@@ -111,6 +135,18 @@
         </div>
         <div>
           Осталось сделать: {{ 150000 - done.runSum }}
+          <div>
+            <div>
+              СПАСИБО ЗА ПРОСМОТР ЭТОГО ДЕРЬМА
+            </div>
+
+          </div>
+        </div>
+        <div>
+          Надо сделать сегодня: {{ datacollectionRun ? (datacollectionRun.datasets[1].data[datacollectionRun.datasets[1].data.length - 1] * 1.02).toFixed(2) : null}}
+        </div>
+        <div>
+          Надо делать каждый день, если поделить все на дни: {{ (( 150000 - done.runSum ) / getDays()).toFixed(2)  }}
         </div>
       </div>
 
@@ -134,6 +170,7 @@ export default {
   },
   data () {
     return {
+      endDate: '2021-12-26',
       datacollectionPushUps: null,
       datacollectionPullUps: null,
       datacollectionSquats: null,
@@ -178,6 +215,15 @@ export default {
     this.getAllData()
   },
   methods: {
+    getDays () {
+      const startDate = this.moment(this.moment().format('YYYY/MM/DD'))
+      const endDate = this.moment(this.endDate)
+      // console.log(startDate)
+      // console.log(endDate)
+      const result = endDate.diff(startDate, 'days') + 1
+      console.log(result)
+      return result
+    },
     saveDates () {
     },
     saveDays () {
