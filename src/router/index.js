@@ -20,6 +20,9 @@ import MiniProjectsPage from '../views/MiniProjectsPage.vue'
 import Timer from '../components/examples/Timer.vue'
 import Hohti from '../views/Nohti/NohtiPage.vue'
 
+// Spheres
+import MusicSphere from '../views/Spheres/Music.vue'
+
 // svg
 import MainPageIcon from '../assets/svg/main-page-icon.svg'
 
@@ -42,6 +45,16 @@ const routes = [
     name: 'Nohti',
     meta: {
       title: 'Ногти',
+      roles: ['admin', 'manager'],
+      icon: MainPageIcon
+    }
+  },
+  {
+    path: '/music-sphere',
+    component: MusicSphere,
+    name: 'music-sphere',
+    meta: {
+      title: 'Музыкальная сфера',
       roles: ['admin', 'manager'],
       icon: MainPageIcon
     }
